@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{6688E08E-2C2E-42A3-BC94-38D7ED2CEF2B}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>Views</RootNamespace>
+        <AssemblyName>Views</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <Deterministic>true</Deterministic>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Deployment" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Details\DetailsForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Details\DetailsForm.Designer.cs">
+          <DependentUpon>DetailsForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Edit\EditForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Edit\EditForm.Designer.cs">
+          <DependentUpon>EditForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Main\MainForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Main\MainForm.Designer.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Models\Models.csproj">
+        <Project>{e0bbeb4e-babc-48e7-b113-92dbff2e87f1}</Project>
+        <Name>Models</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Presenters\Presenters.csproj">
+        <Project>{82812084-c04f-46c7-aa10-282df3a627d6}</Project>
+        <Name>Presenters</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Details\DetailsForm.resx">
+        <DependentUpon>DetailsForm.cs</DependentUpon>
+      </EmbeddedResource>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
