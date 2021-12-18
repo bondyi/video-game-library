@@ -1,5 +1,5 @@
 ﻿using System.Xml.Serialization;
-using Models.VideoGameDatabaseModel;
+using Models.VideoGameRepositoryModel;
 using System.IO;
 
 namespace Models.DatabaseContext

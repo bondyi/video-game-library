@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Models.VideoGameModel;
 
-namespace Models.VideoGameDatabaseModel
+namespace Models.VideoGameRepositoryModel
 {
     [Serializable]
     public class VideoGameRepository

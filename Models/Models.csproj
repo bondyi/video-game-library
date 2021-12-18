@@ -42,7 +42,7 @@
         <Compile Include="DatabaseContext\VideoGameDatabaseContext.cs" />
         <Compile Include="ServiceModels\VideoGameDatabaseService.cs" />
         <Compile Include="ServiceModels\VideoGameService.cs" />
-        <Compile Include="VideoGameDatabaseModel\VideoGameDatabase.cs" />
+        <Compile Include="VideoGameRepositoryModel\VideoGameRepository.cs" />
         <Compile Include="VideoGameModel\TypeGenre.cs" />
         <Compile Include="VideoGameModel\TypePlatform.cs" />
         <Compile Include="VideoGameModel\VideoGame.cs" />

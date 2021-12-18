@@ -1,5 +1,5 @@
 ﻿using Models.DatabaseContext;
-using Models.VideoGameDatabaseModel;
+using Models.VideoGameRepositoryModel;
 using Models.VideoGameModel;
 using System.ComponentModel;
 using System.IO;
