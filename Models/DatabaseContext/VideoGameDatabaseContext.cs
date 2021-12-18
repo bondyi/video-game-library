@@ -2,33 +2,33 @@
 using Models.VideoGameDatabaseModel;
 using System.IO;
 
-namespace Models.RepositoryModel
+namespace Models.DatabaseContext
 {
-    public class VideoGameDatabaseRepository
+    public class VideoGameDatabaseContext
     {
         private const string _connectionString = "data/database.xml";
         private readonly XmlSerializer _serializer;
 
         internal static string Path => _connectionString;
 
-        internal VideoGameDatabaseRepository() => _serializer = new XmlSerializer(typeof(VideoGameDatabase));
+        internal VideoGameDatabaseContext() => _serializer = new XmlSerializer(typeof(VideoGameRepository));
 
-        internal void Serialize(VideoGameDatabase database)
+        internal void Serialize(VideoGameRepository repository)
         {
             if (!Directory.Exists("/data")) Directory.CreateDirectory("data");
             
             File.WriteAllText(Path, string.Empty);
             using (var fs = new FileStream(Path, FileMode.Open))
             {
-                _serializer.Serialize(fs, database);
+                _serializer.Serialize(fs, repository);
             }
         }
 
-        internal VideoGameDatabase Deserialize()
+        internal VideoGameRepository Deserialize()
         {
             using (var fs = new FileStream(Path, FileMode.OpenOrCreate))
             {
-                return (VideoGameDatabase)_serializer.Deserialize(fs);
+                return (VideoGameRepository)_serializer.Deserialize(fs);
             }
         }
     }

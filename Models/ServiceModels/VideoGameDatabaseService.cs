@@ -1,4 +1,4 @@
-﻿using Models.RepositoryModel;
+﻿using Models.DatabaseContext;
 using Models.VideoGameDatabaseModel;
 using Models.VideoGameModel;
 using System.ComponentModel;
@@ -8,21 +8,21 @@ namespace Models.ServiceModels
 {
     public class VideoGameDatabaseService
     {
-        private readonly VideoGameDatabaseRepository _repository;
-        private readonly VideoGameDatabase _database;
+        private readonly VideoGameDatabaseContext _context;
+        private readonly VideoGameRepository _repository;
 
         public VideoGameDatabaseService()
         {
-            _repository = new VideoGameDatabaseRepository();
-            _database = File.Exists(VideoGameDatabaseRepository.Path) ? _repository.Deserialize() : new VideoGameDatabase();
+            _context = new VideoGameDatabaseContext();
+            _repository = File.Exists(VideoGameDatabaseContext.Path) ? _context.Deserialize() : new VideoGameRepository();
         }
 
-        public BindingList<VideoGame> GetDataSource() => _database.VideoGames;
+        public BindingList<VideoGame> GetDataSource() => _repository.VideoGames;
 
-        public void Add(VideoGame videoGame) => _database.Add(videoGame);
-        public void Remove(VideoGame videoGame) => _database.Remove(videoGame);
-        public void Update(VideoGame videoGame) => _database.Update(videoGame);
+        public void Add(VideoGame videoGame) => _repository.Add(videoGame);
+        public void Remove(VideoGame videoGame) => _repository.Remove(videoGame);
+        public void Update(VideoGame videoGame) => _repository.Update(videoGame);
 
-        public void Serialize() => _repository.Serialize(_database);
+        public void Serialize() => _context.Serialize(_repository);
     }
 }

@@ -5,11 +5,11 @@ using Models.VideoGameModel;
 namespace Models.VideoGameDatabaseModel
 {
     [Serializable]
-    public class VideoGameDatabase
+    public class VideoGameRepository
     {
         public BindingList<VideoGame> VideoGames { get; set; }
 
-        public VideoGameDatabase() => VideoGames = new BindingList<VideoGame>();
+        public VideoGameRepository() => VideoGames = new BindingList<VideoGame>();
 
         public void Add(VideoGame videoGame) => VideoGames.Add(videoGame);
         public void Remove(VideoGame videoGame) => VideoGames.Remove(videoGame);
