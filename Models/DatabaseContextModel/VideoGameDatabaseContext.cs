@@ -26,7 +26,7 @@ namespace Models.DatabaseContextModel
 
         internal VideoGameRepository Deserialize()
         {
-            using (var fs = new FileStream(Path, FileMode.OpenOrCreate))
+            using (var fs = new FileStream(Path, FileMode.Open))
             {
                 return (VideoGameRepository)_serializer.Deserialize(fs);
             }
