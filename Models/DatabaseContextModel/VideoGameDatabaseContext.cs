@@ -2,7 +2,7 @@
 using Models.VideoGameRepositoryModel;
 using System.IO;
 
-namespace Models.DatabaseContext
+namespace Models.DatabaseContextModel
 {
     public class VideoGameDatabaseContext
     {
